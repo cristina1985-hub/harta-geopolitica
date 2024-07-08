@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hartă Lumii</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* Stilizăm pop-up-urile */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        max-width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+    }
+    .popup h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    .popup p {
+        margin-bottom: 10px;
+    }
+    .popup ul {
+        margin-top: 0;
+        padding-left: 20px;
+    }
+    .popup li {
+        margin-bottom: 5px;
+    }
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #555;
+    }
+    /* Stilizăm butoanele */
+    .map-container button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body style="margin: 0; height: 100vh; background-color: rgb(14, 14, 14);">
+
+<div class="map-container">
+    <img id="world-map" src="https://gomagcdn.ro/domains/eosette.ro/files/product/original/sticker-harta-lumii-tari-si-oceane-copie-814-6414.jpg" width="1600" height="835" alt="Hartă Lumii">
+
+    <!-- Butoane pentru a deschide pop-up-urile -->
+    <button id="open-popup-north-america">Deschide Pop-up America de Nord</button>
+    <button id="open-popup-africa">Deschide Pop-up Africa de Sud</button>
+    <button id="open-popup-south-america">Deschide Pop-up America de Sud</button>
+    <button id="open-popup-western-europe">Deschide Pop-up Europa de Vest</button>
+    <button id="open-popup-eastern-europe">Deschide Pop-up Europa de Est</button>
+    <button id="open-popup-asia">Deschide Pop-up Asia</button>
+
+    <!-- Pop-up pentru America de Nord -->
+    <div class="popup" id="popup-north-america">
+        <span class="close" id="close-popup-north-america">&times;</span>
+        <h2>America de Nord</h2>
+        <p>În Statele Unite ale Americii, Administrația pentru Alimente și Medicamente (FDA) este responsabilă pentru autorizarea medicamentelor. Numărul exact de medicamente autorizate poate varia în funcție de definițiile și clasificările utilizate, dar câteva estimări generale sunt:</p>
+        <ul>
+            <li>Medicamente eliberate pe bază de prescripție (prescription drugs): FDA a aprobat câteva mii de medicamente pe bază de prescripție de-a lungul timpului. Conform unui raport din 2021, în Statele Unite erau în circulație aproximativ 20.000 de medicamente eliberate pe bază de prescripție.</li>
+            <li>Medicamente fără prescripție (over-the-counter drugs, OTC): Există mii de medicamente OTC aprobate, multe dintre ele fiind disponibile fără a necesita o aprobare individuală datorită conformității lor cu monografiile OTC stabilite de FDA.</li>
+            <li>Medicamente biologice: FDA a aprobat peste 800 de medicamente biologice, incluzând vaccinuri, terapii genice și proteine terapeutice.</li>
+        </ul>
+    </div>
+
+    <!-- Pop-up pentru Africa de Sud -->
+    <div class="popup" id="popup-africa">
+        <span class="close" id="close-popup-africa">&times;</span>
+        <h2>Africa de Sud</h2>
+        <p>În Africa de Sud, autoritatea responsabilă pentru autorizarea medicamentelor este Autoritatea de Reglementare a Produselor pentru Sănătate din Africa de Sud (SAHPRA - South African Health Products Regulatory Authority). Numărul exact de medicamente autorizate de SAHPRA poate varia, dar estimările sugerează că sunt aprobate câteva mii de medicamente.</p>
+        <p>Nu există o sursă publică care să ofere un număr exact actualizat de medicamente autorizate, dar câteva puncte de referință includ:</p>
+        <ul>
+            <li>Medicamente eliberate pe bază de prescripție și fără prescripție (OTC)</li>
+            <li>Medicamente esențiale: Lista Națională de Medicamente Esențiale (Essential Medicines List - EML) din Africa de Sud include aproximativ 350 de medicamente esențiale.</li>
+            <li>Medicamente generice: Un număr semnificativ de medicamente disponibile în Africa de Sud sunt generice, oferind alternative mai accesibile la medicamentele de marcă.</li>
+        </ul>
+    </div>
+
+    <!-- Pop-up pentru America de Sud -->
+    <div class="popup" id="popup-south-america">
+        <span class="close" id="close-popup-south-america">&times;</span>
+        <h2>America de Sud</h2>
+        <p><strong>Brazilia</strong>: Agenția Națională de Supraveghere a Sănătății (ANVISA): Brazilia are una dintre cele mai mari piețe farmaceutice din America Latină. Conform ANVISA, numărul medicamentelor autorizate în Brazilia este în continuă creștere datorită cererii mari și a populației numeroase. Estimativ, există peste 10.000 de medicamente înregistrate.</p>
+        <p><strong>Chile</strong>: Institutul de Sănătate Publică din Chile (ISP): Chile are o piață farmaceutică bine reglementată, iar ISP gestionează autorizațiile de medicamente. Numărul total al medicamentelor autorizate este mai redus decât în Brazilia, dar totuși semnificativ pentru o populație mai mică. Se estimează că Chile are în jur de 3.000-4.000 de medicamente autorizate.</p>
+        <p><strong>Argentina</strong>: Administrația Națională a Medicamentelor, Alimentelor și Tehnologiei Medicale (ANMAT): Argentina are de asemenea o piață farmaceutică mare și bine reglementată. ANMAT autorizează un număr considerabil de medicamente, similar cu cel din Brazilia. Se estimează că în Argentina sunt autorizate peste 7.000 de medicamente.</p>
+    </div>
+
+    <!-- Pop-up pentru Europa de Vest -->
+    <div class="popup" id="popup-western-europe">
+        <span class="close" id="close-popup-western-europe">&times;</span>
+        <h2>Europa de Vest</h2>
+        <p><strong>Franța</strong>: Agenția Națională pentru Siguranța Medicamentelor și a Produselor de Sănătate (ANSM): Franța are un sistem robust de reglementare a medicamentelor. Aproximativ 15.000-20.000 de medicamente sunt autorizate pentru utilizare, incluzând atât medicamentele originale, cât și generice.</p>
+        <p><strong>Germania</strong>: Institutul Federal pentru Medicamente și Dispozitive Medicale (BfArM): Germania are una dintre cele mai mari piețe farmaceutice din Europa. Numărul de medicamente autorizate în Germania este estimat la peste 20.000, acoperind o gamă largă de medicamente originale, generice și biosimilare.</p>
+        <p><strong>Marea Britanie</strong>: Agenția de Reglementare a Medicamentelor și a Produselor de Sănătate (MHRA): Marea Britanie, având un sistem de reglementare bine stabilit, are aproximativ 10.000-15.000 de medicamente autorizate pentru utilizare. După Brexit, MHRA gestionează independent autorizațiile de punere pe piață, ceea ce poate influența numărul exact de medicamente autorizate.</p>
+    </div>
+
+    <!-- Pop-up pentru Europa de Est -->
+    <div class="popup" id="popup-eastern-europe">
+        <span class="close" id="close-popup-eastern-europe">&times;</span>
+        <h2>Europa de Est</h2>
+        <p><strong>România</strong>: Agenția Națională a Medicamentului și a Dispozitivelor Medicale din România (ANMDMR): În România, aproximativ 5.000-6.000 de medicamente sunt autorizate pentru utilizare. Acestea includ atât medicamente originale, cât și generice.</p>
+        <p><strong>Cehia</strong>: Institutul de Stat pentru Controlul Medicamentelor (SÚKL): Cehia are o piață farmaceutică bine reglementată. Se estimează că aproximativ 7.000-8.000 de medicamente sunt autorizate pentru utilizare.</p>
+        <p><strong>Bulgaria</strong>: Agenția Executivă pentru Medicamente (BDA): În Bulgaria, numărul de medicamente autorizate este estimat la aproximativ 4.000-5.000. Aceasta include atât medicamente originale, cât și generice.</p>
+    </div>
+
+    <!-- Pop-up pentru Asia -->
+    <div class="popup" id="popup-asia">
+        <span class="close" id="close-popup-asia">&times;</span>
+        <h2>Asia</h2>
+        <p><strong>Japonia</strong>: În Japonia, autorizațiile pentru medicamente sunt gestionate de Ministerul Sănătății, Muncii și Bunăstării (MHLW) și de Agenția de Produse Farmaceutice și Dispozitive Medicale (PMDA). Se estimează că în jur de 20.000-30.000 de medicamente sunt autorizate pentru utilizare în Japonia. Acestea includ medicamente originale, generice și biosimilare.</p>
+        <p><strong>Coreea de Sud</strong>: În Coreea de Sud, autorizațiile pentru medicamente sunt gestionate de Ministerul Sănătății și Afacerilor Sociale (MOHW) și de Agenția Coreeană de Siguranță și Eficacitate a Medicamentelor (KFDA). Se estimează că Coreea de Sud are aproximativ 15.000-20.000 de medicamente autorizate pentru utilizare, acoperind o gamă largă de medicamente de la cele originale la generice și biosimilare.</p>
+        <p><strong>India</strong>: În India, autorizațiile pentru medicamente sunt gestionate de Central Drugs Standard Control Organization (CDSCO) și de alte autorități locale. India are una dintre cele mai mari piețe farmaceutice din lume, iar numărul exact de medicamente autorizate este extrem de mare, depășind 10.000 de medicamente, inclusiv medicamente originale și generice.</p>
+        <p><strong>Turkmenistan</strong>: Turkmenistanul are un sistem de reglementare a medicamentelor gestionat de Ministerul Sănătății și Industriei Medicale. Numărul exact de medicamente autorizate nu este publicat în mod obișnuit, dar se estimează că lista de medicamente disponibile este mai restrânsă decât în țările cu piețe farmaceutice mai mari.</p>
+        <p><strong>Indonezia</strong>: În Indonezia, autorizațiile pentru medicamente sunt gestionate de Badan Pengawas Obat dan Makanan (BPOM), adică Agenția Națională pentru Controlul Medicamentelor și Alimentelor. Indonezia are o listă de medicamente autorizate care depășește 10.000 de medicamente, acoperind o gamă largă de produse farmaceutice, de la medicamente generice la produse biologice și biosimilare.</p>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById('open-popup-north-america').addEventListener('click', function() {
+        document.getElementById('popup-north-america').style.display = 'block';
+    });
+    document.getElementById('close-popup-north-america').addEventListener('click', function() {
+        document.getElementById('popup-north-america').style.display = 'none';
+    });
+
+    document.getElementById('open-popup-africa').addEventListener('click', function() {
+        document.getElementById('popup-africa').style.display = 'block';
+    });
+    document.getElementById('close-popup-africa').addEventListener('click', function() {
+        document.getElementById('popup-africa').style.display = 'none';
+    });
+
+    document.getElementById('open-popup-south-america').addEventListener('click', function() {
+        document.getElementById('popup-south-america').style.display = 'block';
+    });
+    document.getElementById('close-popup-south-america').addEventListener('click', function() {
+        document.getElementById('popup-south-america').style.display = 'none';
+    });
+
+    document.getElementById('open-popup-western-europe').addEventListener('click', function() {
+        document.getElementById('popup-western-europe').style.display = 'block';
+    });
+    document.getElementById('close-popup-western-europe').addEventListener('click', function() {
+        document.getElementById('popup-western-europe').style.display = 'none';
+    });
+
+    document.getElementById('open-popup-eastern-europe').addEventListener('click', function() {
+        document.getElementById('popup-eastern-europe').style.display = 'block';
+    });
+    document.getElementById('close-popup-eastern-europe').addEventListener('click', function() {
+        document.getElementById('popup-eastern-europe').style.display = 'none';
+    });
+
+    document.getElementById('open-popup-asia').addEventListener('click', function() {
+        document.getElementById('popup-asia').style.display = 'block';
+    });
+    document.getElementById('close-popup-asia').addEventListener('click', function() {
+        document.getElementById('popup-asia').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
